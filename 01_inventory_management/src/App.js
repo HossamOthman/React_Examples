@@ -42,6 +42,22 @@ function App() {
     
   }
 
+  const deleteItem = (item) => {
+    const items = data["items"];
+    const requestOptions = {
+      method: "DELETE"
+    }
+
+    fetch(`http://localhost:3000/items/${item.id}`, requestOptions)
+    .then(res => {
+      if (res.ok) {
+        const idx = items.indexOf(item);
+        items.splice(idx, 1);
+        setData({items: items});
+      }
+    })
+  }
+
   const filterData = (data) => {
     const filteredData = [];
 
@@ -79,7 +95,8 @@ function App() {
       </div>
 
       <div className="row mt-3">
-        <ItemsDisplay items={filterData(data["items"])}/>
+        <ItemsDisplay items={filterData(data["items"])}
+        deleteItem={deleteItem}/>
       </div>
     </div>
   );

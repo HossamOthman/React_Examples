@@ -1,21 +1,11 @@
 {
   "items": [
     {
-      "id": 1
-    },
-    {
       "name": "tim",
       "price": "11",
       "type": "tt",
       "brand": "bb",
       "id": 3
-    },
-    {
-      "name": "tim",
-      "price": "2",
-      "type": "tt",
-      "brand": "bb",
-      "id": 4
     },
     {
       "name": "tim",
@@ -65,6 +55,13 @@
       "type": "ttt",
       "brand": "bbb",
       "id": 11
+    },
+    {
+      "name": "ok",
+      "price": "88",
+      "type": "tyty",
+      "brand": "brbr",
+      "id": 12
     }
   ]
 }
