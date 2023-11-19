@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import HeaderBB from './components/ux/HeaderBB'
+import CharacterGrid from './components/characterSet/CharacterGrid'
 import './App.css';
 
 
@@ -13,17 +14,19 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       const result = await axios(`https://api.github.com/users`)
-
+      console.log(result.data)
       setItems(result.data)
       setIsLoading(false)
     }
 
+    
     fetchItems()
   }, [])
 
   return (
     <div className="container">
       <HeaderBB/>
+      <CharacterGrid isLoading={isLoading} items={items}/>
     </div>
   );
 }
